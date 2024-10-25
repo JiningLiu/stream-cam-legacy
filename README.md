@@ -59,17 +59,22 @@ source ~/.bashrc
 
 nvm install --lts
 
-echo "alias serve='node ~/stream-cam/server/index.js &'" >> ~/.bashrc
+echo "alias serve='cd stream-cam-web && npm run dev & node ~/stream-cam/server/index.js'" >> ~/.bashrc
 echo "alias cam='~/stream-cam/mediamtx'" >> ~/.bashrc
-echo "alias stop='killall node & killall mediamtx'" >> ~/.bashrc
-echo "alias update='cd ~/stream-cam/ && git pull && cp mediamtx.yml ~/mediamtx.yml && cd server && npm i'" >> ~/.bashrc
+echo "alias web='cd stream-cam-web && npm run dev'" >> ~/.bashrc
+echo "alias stop='killall node & killall vite & killall mediamtx'" >> ~/.bashrc
+echo "alias update='cd ~/stream-cam-web/ && git pull && npm i && cd ~/stream-cam/ && git pull && cp mediamtx.yml ~/mediamtx.yml && cd server && npm i'" >> ~/.bashrc
 source ~/.bashrc
 
 cd ~/
 git clone https://github.com/JiningLiu/stream-cam/
-cp stream-cam/mediamtx.yml mediamtx.yml
-
 cd stream-cam/server
+cp ./mediamtx.yml ~/mediamtx.yml
+npm i
+
+cd ~/
+git clone https://github.com/JiningLiu/stream-cam-web/
+cd stream-cam-web
 npm i
 
 echo "serve" >> ~/.bashrc
