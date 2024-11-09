@@ -697,5 +697,5 @@ paths:
   #cam:
     #source: rpiCamera
   cam:
-    runOnInit: bash -c 'rpicam-vid -t 0 --camera 0 --nopreview --codec yuv420 --vflip --hflip --width 1920 --height 1080 --framerate 30 --ev 0.0 --gain 0.0 --awb auto --lens-position default --autofocus-speed fast --inline --listen -o - | ffmpeg -f rawvideo -pix_fmt yuv420p -s:v 1920x1080 -i /dev/stdin -c:v libx264 -preset ultrafast -tune zerolatency -c:a libmp3lame -b:a 64k -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
+    runOnInit: bash -c 'rpicam-vid -t 0 --camera 0 --nopreview --codec yuv420 --vflip --hflip --width 1920 --height 1080 --framerate 30 --ev -0.3 --gain 0.0 --awb auto --autofocus-mode continuous --lens-position default --autofocus-speed fast --inline --listen -o - | ffmpeg -f rawvideo -pix_fmt yuv420p -s:v 1920x1080 -i /dev/stdin -c:v libx264 -preset ultrafast -tune zerolatency -c:a libmp3lame -b:a 64k -f rtsp rtsp://localhost:$RTSP_PORT/$MTX_PATH'
     runOnInitRestart: yes
