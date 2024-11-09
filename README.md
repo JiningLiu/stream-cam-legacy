@@ -1,8 +1,6 @@
 # RPi Streaming Camera
 
-## DIY Instructions
-
-### Hardware
+## Hardware
 
 You will need:
 
@@ -28,7 +26,9 @@ Download the 3MF file located in the [hardware](./hardware) directory 3D print t
 
 Put together the setup according to the [assembly instructions](./hardware/ASSEMBLY.md).
 
-### Software
+## Software
+
+### Installation
 
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to flash SD card with [Raspberry Pi OS](https://www.raspberrypi.com/software/operating-systems/) (64-bit) with desktop ([version used for this release](https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2024-07-04/2024-07-04-raspios-bookworm-arm64.img.xz))
 - Setup SSH in Raspberry Pi Imager settings.
@@ -87,3 +87,13 @@ Your Pi will now reboot, and automatically start the server when it's on.
 If you had previously used ethernet to connect to the Pi, or was using a different network not meant for streaming, you can now use VNC to access the GUI, and add the Wi-Fi network that you would like to use for video transmission.
 
 Your Pi is now ready for live streaming!
+
+### Updating
+
+In order to update the software on your camera to the latest minor version on the major release installed, simply run `update` in the terminal of the Pi.
+
+If you would like to upgrade your camera to a newer major release, you will need to wipe your Pi and reinstall the software.
+
+## License
+
+© 2024 Jining Liu, [MIT License](./LICENSE)
