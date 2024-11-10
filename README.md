@@ -63,12 +63,14 @@ echo "alias serve='cd stream-cam-web && npm run dev & node ~/stream-cam/server/i
 echo "alias cam='~/stream-cam/mediamtx'" >> ~/.bashrc
 echo "alias web='cd stream-cam-web && npm run dev'" >> ~/.bashrc
 echo "alias stop='killall node & killall vite & killall mediamtx'" >> ~/.bashrc
-echo "alias update='stop & sleep 1s && cd ~/stream-cam-web/ && git reset --hard && git pull && npm i && cd ~/stream-cam/ && git reset --hard && git pull && cd server && cp mediamtx.yml ~/mediamtx.yml && npm i'" >> ~/.bashrc
+echo "alias update='~/stream-cam/update.sh'" >> ~/.bashrc
 source ~/.bashrc
 
 cd ~/
 git clone https://github.com/JiningLiu/stream-cam/
-cd stream-cam/server
+cd stream-cam
+chmod +x update.sh
+cd server
 cp ./mediamtx.yml ~/mediamtx.yml
 npm i
 
