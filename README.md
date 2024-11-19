@@ -59,9 +59,10 @@ source ~/.bashrc
 
 nvm install --lts
 
-echo "alias serve='cd stream-cam-web && npm run dev & node ~/stream-cam/server/index.js'" >> ~/.bashrc
+echo "alias serve='cd ~/stream-cam-web && npm run preview & cd ~/stream-overlays && bun run preview & node ~/stream-cam/server/index.js'" >> ~/.bashrc
 echo "alias cam='~/stream-cam/mediamtx'" >> ~/.bashrc
-echo "alias web='cd stream-cam-web && npm run dev'" >> ~/.bashrc
+echo "alias web='cd stream-cam-web && npm run preview'" >> ~/.bashrc
+echo "alias overlays='cd stream-overlays && bun run preview'" >> ~/.bashrc
 echo "alias stop='killall node & killall vite & killall mediamtx'" >> ~/.bashrc
 echo "alias update='~/stream-cam/update.sh'" >> ~/.bashrc
 source ~/.bashrc
@@ -78,6 +79,15 @@ cd ~/
 git clone https://github.com/JiningLiu/stream-cam-web/
 cd stream-cam-web
 npm i
+npm run build
+
+npm install -g bun
+
+cd ~/
+git clone https://github.com/JiningLiu/stream-overlays/
+cd stream-overlays
+bun i
+bun run build
 
 echo "serve" >> ~/.bashrc
 
