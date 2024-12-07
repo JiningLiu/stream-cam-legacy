@@ -60,10 +60,10 @@ wss.on("connection", function connection(ws) {
       //   break;
       // }
 
-      case "set-mf": {
-        camSettings.mf = input;
-        break;
-      }
+      // case "set-mf": {
+      //   camSettings.mf = input;
+      //   break;
+      // }
 
       case "reboot": {
         sh("sudo reboot");
