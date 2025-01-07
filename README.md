@@ -107,6 +107,12 @@ In order to update the software on your camera to the latest minor version on th
 
 If you would like to upgrade your camera to a newer major release, you will need to wipe your Pi and reinstall the software.
 
-## License
+## Licenses
 
 © 2024 Jining Liu, [MIT License](./LICENSE)
+
+### Credits
+
+[bluenviron/mediamtx](https://github.com/bluenviron/mediamtx)
+
+© 2019 aler9, [MIT License](https://github.com/bluenviron/mediamtx/blob/main/LICENSE)
