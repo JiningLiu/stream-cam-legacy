@@ -1,5 +1,7 @@
 # RPi Streaming Camera
 
+> ❗Please note that this repository is still **incomplete**. Significant changes to both hardware and software coming soon in v1.1.
+
 ## Hardware
 
 You will need:
