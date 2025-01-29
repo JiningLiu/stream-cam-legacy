@@ -63,18 +63,18 @@ source ~/.bashrc
 
 nvm install --lts
 
-echo "alias serve='cd ~/stream-cam-web && npm run preview & cd ~/stream-overlays && bun run preview & node ~/stream-cam/server/index.js'" >> ~/.bashrc
-echo "alias cam='~/stream-cam/mediamtx'" >> ~/.bashrc
+echo "alias serve='cd ~/stream-cam-web && npm run preview & cd ~/stream-overlays && bun run preview & node ~/stream-cam-legacy/server/index.js'" >> ~/.bashrc
+echo "alias cam='~/stream-cam-legacy/mediamtx'" >> ~/.bashrc
 echo "alias web='cd stream-cam-web && npm run preview'" >> ~/.bashrc
 echo "alias overlays='cd stream-overlays && bun run preview'" >> ~/.bashrc
 echo "alias stop='killall node & killall vite & killall mediamtx & killall bun & lsof -ti :3000 :5281 :6232 | xargs kill
 '" >> ~/.bashrc
-echo "alias update='~/stream-cam/update.sh'" >> ~/.bashrc
+echo "alias update='~/stream-cam-legacy/update.sh'" >> ~/.bashrc
 source ~/.bashrc
 
 cd ~/
-git clone https://github.com/JiningLiu/stream-cam/
-cd stream-cam
+git clone https://github.com/JiningLiu/stream-cam-legacy/
+cd stream-cam-legacy
 chmod +x update.sh
 cd server
 cp ./mediamtx.yml ~/mediamtx.yml
