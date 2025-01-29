@@ -1,6 +1,8 @@
 # RPi Streaming Camera
 
-> ❗Please note that this repository is still **incomplete**. Significant changes to both hardware and software coming soon in v1.1.
+> ❗We are working on an improved version of stream-cam. This repository is now a public archive.
+
+> ⚠️ More info will be available at [JiningLiu/stream-cam](https://github.com/JiningLiu/stream-cam/) soon.
 
 ## Hardware
 
